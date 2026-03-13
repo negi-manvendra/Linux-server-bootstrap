@@ -1,5 +1,5 @@
 #!/bin/bash
-
+mkdir -p logs
 source ./scripts/logging.sh
 source ./scripts/package_install.sh
 source ./scripts/user_setup.sh
