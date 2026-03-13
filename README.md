@@ -1,205 +1,102 @@
-    # Linux Server Bootstrap
+# Linux Server Bootstrap Automation
 
-A Bash-based automation project that prepares a fresh Linux server for secure usage.
-This project demonstrates how common server initialization tasks can be automated using modular Bash scripts.
+A Bash-based automation script that performs initial server provisioning on a fresh Ubuntu machine.
 
-The goal is to simulate a basic DevOps workflow where a newly provisioned Linux machine is automatically configured with essential security and system setup steps.
-
----
-
-## Project Objectives
-
-* Automate initial server configuration
-* Enforce basic server security practices
-* Maintain modular and reusable Bash scripts
-* Track system setup through centralized logging
-* Manage project version control using Git
+This project simulates a common DevOps task: **bootstrapping a new Linux server with secure defaults and required tools.**
 
 ---
 
-## Technologies Used
+## 🚀 Features
 
-* Linux
-* Bash
-* Git
-* SSH
+* Updates system packages
+* Installs essential tools
+* Creates a dedicated **devops user**
+* Applies **SSH hardening**
+* Configures **UFW firewall**
+* Organizes **logging for troubleshooting**
 
-No external automation tools or frameworks are used.
-The entire project is implemented purely using Bash scripting.
-
----
-
-## Features
-
-The automation performs the following tasks:
-
-1. Package installation
-2. User creation
-3. SSH security hardening
-4. Firewall configuration
-5. Logging of all setup operations
-
-Each operation is handled by an independent Bash script to maintain modularity and readability.
+The goal is to automate repetitive server setup tasks and enforce consistent configurations.
 
 ---
 
-## Project Structure
+## 🛠 Tech Stack
+
+* Linux (Ubuntu)
+* Bash scripting
+* SSH configuration
+* UFW Firewall
+* Git & GitHub
+
+---
+
+## 📂 Project Structure
 
 ```
-linux-server-bootstrap
+Linux-server-bootstrap
 │
 ├── bootstrap.sh
-│
-├── scripts
+├── logs/
+├── scripts/
+│   ├── firewall_setup.sh
 │   ├── logging.sh
 │   ├── package_install.sh
-│   ├── user_setup.sh
 │   ├── ssh_hardening.sh
-│   └── firewall_setup.sh
+│   └── user_setup.sh
 │
-├── logs
-│
-├── .gitignore
 └── README.md
 ```
 
-### File Descriptions
-
-**bootstrap.sh**
-
-Main controller script that executes all setup modules in sequence.
-
-**scripts/logging.sh**
-
-Provides logging functions used by all scripts to record system actions.
-
-**scripts/package_install.sh**
-
-Updates package repositories and installs required system packages.
-
-**scripts/user_setup.sh**
-
-Creates a new system user and configures their shell environment.
-
-**scripts/ssh_hardening.sh**
-
-Applies basic SSH security settings such as disabling root login and password authentication.
-
-**scripts/firewall_setup.sh**
-
-Configures the system firewall and allows SSH connections.
-
-**logs/**
-
-Stores log files generated during the bootstrap process.
-
 ---
 
-## How the Automation Works
-
-The `bootstrap.sh` script orchestrates the entire setup process.
-
-Execution order:
-
-1. Logging system initialization
-2. System package update
-3. Required package installation
-4. User creation
-5. SSH security configuration
-6. Firewall configuration
-
-Each step logs its actions to a central log file.
-
----
-
-## Installation
+## ⚙️ How to Run
 
 Clone the repository:
 
-```
-git clone https://github.com/YOUR_USERNAME/linux-server-bootstrap.git
-```
-
-Navigate into the project directory:
-
-```
-cd linux-server-bootstrap
+```bash
+git clone https://github.com/negi-manvendra/Linux-server-bootstrap.git
+cd Linux-server-bootstrap
 ```
 
-Make the scripts executable:
+Make scripts executable:
 
-```
+```bash
 chmod +x bootstrap.sh
 chmod +x scripts/*.sh
 ```
 
----
+Run the bootstrap script:
 
-## Running the Bootstrap Automation
-
-Execute the main bootstrap script:
-
+```bash
+sudo ./bootstrap.sh
 ```
-./bootstrap.sh
-```
-
-The script will automatically perform the server configuration tasks.
 
 ---
 
-## Logging
-
-All operations performed by the scripts are recorded in the log file:
+## 📌 Example Output
 
 ```
-logs/bootstrap.log
-```
-
-Logs include timestamps and messages indicating each action performed during the server setup process.
-
-Example log entry:
-
-```
-[INFO] 2026-03-10 19:10:02 : Starting Linux Server Bootstrap
+[INFO] Starting Linux Server Bootstrap
 [INFO] Updating package index
 [INFO] Installing required packages
-[INFO] User creation completed
-[INFO] Firewall configuration completed
+[INFO] Creating user: devops
+[INFO] Configuring SSH hardening
+[INFO] Enabling firewall
+[INFO] Server bootstrap completed successfully
 ```
 
 ---
 
-## Use Case
+## 🎯 Learning Objectives
 
-This project demonstrates how system administrators or DevOps engineers can automate the initialization of new Linux machines using simple Bash scripts.
+This project helped me understand:
 
-It is particularly useful for:
-
-* Learning Bash automation
-* Practicing infrastructure setup
-* Demonstrating DevOps fundamentals
-* Building portfolio projects
+* Linux server provisioning
+* Security hardening basics
+* Bash scripting for automation
+* Infrastructure preparation for DevOps workflows
 
 ---
 
-## Future Improvements
+## 📬 Feedback
 
-Possible improvements for this project include:
-
-* Additional security hardening
-* System monitoring scripts
-* Backup automation
-* Integration with configuration management tools
-
----
-
-## License
-
-This project is open source and available under the MIT License.
-
----
-
-## Author
-
-Manvendra Negi
-
+Suggestions and improvements are welcome!
